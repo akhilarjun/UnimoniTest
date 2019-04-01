@@ -1,0 +1,19 @@
+.go-right{
+    text-align: right;
+}
+.sub-text{
+    margin: 20px 0;
+}
+.login-wrapper{
+    color: #ddd;
+}
+
+.login-btn{
+    border-radius: 35px;
+    width: 100%;
+}
+
+:host{
+    display: block;
+    width: 100%;
+}

@@ -1,0 +1,70 @@
+<div class="fixed-row">
+  <div class="grid-cell-d-6 grid-cell-t-6 grid-cell-m-12 main-content">
+    <h2>We are here to <span class="special">serve</span> you <span class="special" *ngIf="session.loggedIn">{{session.username}}</span>!</h2>
+    <div class="sub-text">
+      Unimoni is world leader in financial services. With more than 5 million happy customers, 
+      we function as a happy family that serves our clients with at-most importance.
+    </div>
+    <div class="btn-holder">
+      <button class="simple error">Read More</button>
+    </div>
+  </div>
+  <div class="grid-cell-d-6 grid-cell-t-6 grid-cell-m-12 register" *ngIf="!session.loggedIn">
+    <h3>Register with us <span class="special">Today</span></h3>
+    <div class="msgHolder error" *ngIf="errMsg.length > 0">{{errMsg}}</div>
+    <div class="msgHolder success" *ngIf="successMsg.length > 0">{{successMsg}}</div>
+    
+    <div class="form-wrapper">
+      <div class="input">
+        <input type="text" name="nameOfUser" id="nameOfNewUser" placeholder="Please enter your name" [(ngModel)]="newUser.name">
+      </div>
+      <div class="input">
+        <input type="text" name="emailOfUser" id="emailOfNewUser" placeholder="Please enter your e-mail" [(ngModel)]="newUser.emailId">
+      </div>
+      <div class="input">
+        <input readonly [max]="maxDate" type="text" name="dobOfUser" id="dobOfNewUser" placeholder="Please enter your Date Of Birth" [(ngModel)]="newUser.dob" [owlDateTimeTrigger]="dt" [owlDateTime]="dt">
+        <owl-date-time #dt [pickerType]="'calendar'"></owl-date-time>
+      </div>
+      <div class="input">
+        <input type="text" name="numberOfUser" id="numberOfNewUser" placeholder="Please enter your mobile number" [(ngModel)]="newUser.mob">
+      </div>
+      <div class="input">
+        <input type="password" name="passwordOfUser" id="passwordOfNewUser" placeholder="Please enter your password" [(ngModel)]="newUser.password">
+      </div>
+      <div class="input">
+        <input type="radio" name="gender" id="male" value="M" [(ngModel)]="newUser.gender"> <label for="male">Male</label>
+        <input type="radio" name="gender" id="female" value="F" [(ngModel)]="newUser.gender"> <label for="female">Female</label>
+      </div>
+      <div class="input">
+        <input type="checkbox" name="updates" id="updates" value="updateFuture" [(ngModel)]="newUser.reqUpdates"> <label for="updates">Please check if you would like to get updates from our loan team</label>
+      </div>
+      <div class="input">
+        <button class="register-btn simple error large" (click)="registerNewUser()">Register</button>
+      </div>
+    </div>
+  </div>
+  <div class="grid-cell-d-6 grid-cell-t-6 grid-cell-m-12 admin" *ngIf="session.loggedIn && session.isAdmin">
+    <h4 style="margin-bottom: 10px;">Existing Users</h4>
+    <table class="with-border">
+      <thead>
+        <th>Name</th>
+        <th>E-Mail ID</th>
+        <th>Mobile Number</th>
+        <th>Would Like Updates</th>
+        <th>Delete User</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.name}}</td>
+          <td>{{user.emailId}}</td>
+          <td>{{user.mob}}</td>
+          <td>{{user.reqUpdates}}</td>
+          <td>
+            <button class="small error simple rounded" (click)="deleteUser(user)" *ngIf="user.emailId !== session.emailId">Delete</button>
+            <button class="small warning simple rounded" *ngIf="user.emailId === session.emailId">Admin</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

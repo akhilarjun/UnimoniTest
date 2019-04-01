@@ -1,0 +1,62 @@
+.banner-row{
+    padding: 50px;
+}
+.logobar{
+    display: flex;
+    align-items: center;
+}
+.logo{
+    width: 40px;
+}
+.logoholder{
+    font-size: 30px;
+    color: #ccc;
+    background: transparent;
+    display: inline-block;
+    font-weight: bold;
+}
+.navbar .nav{
+    display: inline-block;
+    background: transparent;
+    cursor: pointer;
+}
+.navbar .nav a{
+    padding: 10px 5px;
+    margin: 0 15px;
+    background: transparent;
+    text-decoration: none;
+    display: inline-block;
+    color: #aaa;
+    transition: all 500ms;
+    position: relative;
+}
+.navbar .nav a.active{
+    color: #ff4e4e;
+}
+.navbar .nav a.active:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ff4e4e;
+}
+.navbar .nav a.active:before{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 21px;
+    height: 0px;
+    border: 5px solid transparent;
+    border-top-color: #ff4e4e;
+}
+.navbar .nav a:hover{
+    color: #fff;
+}
+.body{
+    padding: 80px 50px 50px;
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 300px);
+}

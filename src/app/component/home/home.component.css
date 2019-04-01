@@ -1,0 +1,34 @@
+.main-content{
+    color: #ddd;
+    padding: 0 25px;
+}
+.sub-text{
+    margin: 10px 0;
+    text-align: justify;
+}
+.btn-holder{
+    margin: 10px 0;
+}
+.btn-holder button{
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin: 10px 0;
+}
+.register{
+    color: #ddd;
+    padding: 0 25px 0 100px;
+}
+.admin{
+    color: #ddd;
+    padding: 0 50px;
+}
+.register-btn{
+    width: 100%;
+    margin: 0;
+}
+
+@media (max-width:768px){
+    .register{
+        padding: 0 25px;
+    }
+}

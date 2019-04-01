@@ -1,0 +1,15 @@
+<div class="fixed-row banner-row">
+  <div class="logobar grid-cell-d-6 grid-cell-t-6 grid-cell-m-12">
+    <img src="../assets/img/logo.png" alt="" class="logo"/>
+    <div class="logoholder">Unimoni Loan Center</div>
+  </div>
+  <div class="navbar grid-cell-d-6 grid-cell-t-6 grid-cell-m-12">
+    <div class="nav"><a routerLink='home' routerLinkActive="active">Home</a></div>
+    <div class="nav"><a routerLink='about' routerLinkActive="active">About</a></div>
+    <div class="nav"><a routerLink='login' routerLinkActive="active" *ngIf="!session.loggedIn">Login</a></div>
+    <div class="nav"><a href="#" *ngIf="session.loggedIn">Logout</a></div>
+  </div>
+</div>
+<div class="body">
+  <router-outlet></router-outlet>
+</div>

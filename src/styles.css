@@ -1,0 +1,77 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+*{
+    font-family: 'Ubuntu', sans-serif;
+    /* background: #E8E9E9; */
+}
+html{
+    background: #333;
+}
+body{
+    min-height: 100vh;
+}
+/* .bg-img{
+    background: url('./assets/img/bg.jpg');
+    background-size: cover;
+    opacity: 0.05;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+} */
+.input{
+    margin: 15px 0;
+    max-width: 380px;
+}
+
+.input input{
+    max-width: 380px;
+}
+
+.input input[type='radio'], .input input[type='checkbox']{
+    width: auto;
+    vertical-align: middle;
+}
+
+.input > input[type='radio'] + label, .input > input[type='checkbox'] + label{
+    position: relative;
+    top: initial;
+    bottom: initial;
+    left: initial;
+    right: initial;
+    margin-right: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+button{
+    margin: 0;
+}
+.special{
+    color: #ff4e4e;
+}
+.fixed-row [class*='grid-cell-']{
+    padding: 0 25px;
+}
+.hand-cursor{
+    cursor: pointer;
+}
+.input button, button {
+    outline: none;
+}
+.msgHolder{
+    padding: 10px;
+    color: #ddd;
+    width: 380px;
+    margin: 10px 0;
+}
+.msgHolder.error{
+    background: #ff4e4e;
+}
+.msgHolder.success{
+    background: #008e00;
+}
+
+table > tbody tr:nth-child(even){
+    background: transparent;
+}

@@ -1,0 +1,20 @@
+<div class="fixed-row login-wrapper">
+    <div class="grid-cell-d-6 grid-cell-t-6 grid-cell-m-12 go-right">
+        <h2>Join us <span class="special">Today!</span></h2>
+        <div class="sub-text">If not registered with us already, please <span class='special hand-cursor' routerLink="/home">sign up</span> now!</div>
+    </div>
+    <div class="grid-cell-d-6 grid-cell-t-6 grid-cell-m-12">
+        <h2>Please <span class="special">Login</span> here!</h2>
+        <div class="msgHolder error" *ngIf="errMsg.length > 0">{{errMsg}}</div>
+        <div class="msgHolder success" *ngIf="successMsg.length > 0">{{successMsg}}</div>
+        <div class="input">
+            <input type="email" name="email" placeholder="Please enter your email" [(ngModel)]="user.emailId">
+        </div>
+        <div class="input">
+            <input type="password" name="password" placeholder="Please enter your password" [(ngModel)]="user.password">
+        </div>
+        <div class="input">
+            <button class="login-btn simple error large" (click)="login()">Login</button>
+        </div>
+    </div>
+</div>
